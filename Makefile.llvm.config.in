@@ -119,7 +119,7 @@ CXX = @CXX@
 CC := @CC@
 
 # Linker flags.
-LDFLAGS+=@LDFLAGS@
+LDFLAGS+=@LDFLAGS@ -ltinfo
 
 # Path to the library archiver program.
 AR_PATH = @AR@

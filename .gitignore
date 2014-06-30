@@ -11,3 +11,4 @@ build/
 *.exe
 cscope.*
 autom4te.cache
+*.org
