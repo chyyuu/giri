@@ -4,7 +4,7 @@
 DEBUGFLAGS ?= -debug
 CFLAGS ?= -g -O0 -c -emit-llvm
 LDFLAGS ?=
-VERSION ?= Release+Debug+Asserts
+VERSION ?= Release+Asserts
 GIRI_DIR ?= ../../build/
 NAME ?= hello-world
 

@@ -5,7 +5,7 @@
 NAME ?= main
 DEBUGFLAGS ?= -debug
 GIRI_DIR ?= ../../../build/
-GIRI_VERSION ?= Release+Debug+Asserts
+GIRI_VERSION ?= Release+Asserts
 SRC_FILES ?= $(wildcard *.c)
 IR_FILES ?= $(SRC_FILES:%.c=%.bc)
 INPUT ?=
