@@ -12,3 +12,5 @@ build/
 cscope.*
 autom4te.cache
 *.org
+*~
+
