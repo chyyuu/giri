@@ -1,0 +1,37 @@
+##===- giri/test/Makefile ----------------------------------*- Makefile -*-===##
+#
+# Define the default test rule. Just type 'make test' in this directory.
+#
+##===----------------------------------------------------------------------===##
+
+.PHONY: test lib clean
+
+# The default target in this directory is the test:: target
+test:: lib
+	echo "Running the test cases, fases and applications..."
+	for t in $$(cat chy-tests.txt);\
+		do\
+			printf "\033[37m%-20s" "$$t";\
+			make clean -C $$t ;\
+			make -f Makefile.chy -C $$t ;\
+			make -f Makefile.chy test -C $$t DEBUGFLAGS= ;\
+			if [ $$? -eq 0 ]; then\
+				printf "\033[34m[PASS]\n";\
+			else\
+				printf "\033[31m[FAIL]\n";\
+			fi;\
+#			make clean -s -C $$t ;\
+		done
+	
+lib:
+	echo "Building the Giri..."
+	$(MAKE) -s -C ../build || (echo "Fail to build the Giri lib!" && exit 1)
+	echo
+
+clean:
+	for u in $(shell ls UnitTests); do \
+		[[ -d UnitTests/$$u ]] && make clean -C UnitTests/$$u;\
+		done
+	$(MAKE) clean -C kmeans
+	$(MAKE) clean -C matrix_multiply
+	$(MAKE) clean -C pca

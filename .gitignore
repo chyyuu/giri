@@ -1,3 +1,6 @@
+.ycm_extra_conf.*
+llvm-include
+*.log
 build/
 *.o
 *.a
