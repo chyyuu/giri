@@ -31,7 +31,8 @@
 
 #include <stack>
 #include <unordered_map>
-
+//chy for debug
+#define DEBUG_GIRI_RUNTIME
 #ifdef DEBUG_GIRI_RUNTIME
 #define DEBUG(...) fprintf(stderr, __VA_ARGS__)
 #else

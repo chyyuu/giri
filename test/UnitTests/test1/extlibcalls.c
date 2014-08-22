@@ -15,5 +15,5 @@ int main(int argc, char *argv[])
   printf("%s\n", input);
   printf("%zd\n", strlen(input));
 
-  return strlen(input);
+  return strlen(input)-12;
 }
